@@ -14,13 +14,13 @@ public class LongestContinuosRepeatingCharacter {
 
   public Item find(String s) {
     char[] arr = s.toCharArray();
-    char charRepeated = Character.MIN_VALUE;
 
     if (arr.length == 0)
       return new Item();
     
     int currCharCount = 0;
     int maxCharCount = 0;
+    char charRepeated = arr[0];
     HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
     map.put(arr[0], 1);
