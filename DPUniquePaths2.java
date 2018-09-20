@@ -18,7 +18,8 @@ public class DPUniquePaths2 {
       return 1;
     if (map.containsKey((row + ":" + col)))
       return map.get((row + ":" + col));
-    int up = findUniquePaths(obstacleGrid, row - 1, col, map) + findUniquePaths(obstacleGrid, row, col - 1, map);
+    int up = findUniquePaths(obstacleGrid, row - 1, col, map)
+      + findUniquePaths(obstacleGrid, row, col - 1, map);
     map.put((row + ":" + col), up);
     return up;
   }
