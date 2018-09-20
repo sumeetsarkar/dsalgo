@@ -35,42 +35,6 @@ public class AddTwoList {
       l1 = l1 != null ? l1.next : null;
       l2 = l2 != null ? l2.next : null;
     }
-    
-    // while(l1 != null) {
-    //   int sum = l1.val + carry;
-    //   if (sum > 9) {
-    //     carry = 1;
-    //     sum = sum % 10;
-    //   } else {
-    //     carry = 0;
-    //   }
-    //   ListNode ln = new ListNode(sum);
-    //   if (result == null) {
-    //     result = nextChain = ln;
-    //   } else {
-    //     nextChain.next = ln;
-    //     nextChain = ln;
-    //   }
-    //   l1 = l1.next;
-    // }
-
-    // while(l2 != null) {
-    //   int sum = l2.val + carry;
-    //   if (sum > 9) {
-    //     carry = 1;
-    //     sum = sum % 10;
-    //   } else {
-    //     carry = 0;
-    //   }
-    //   ListNode ln = new ListNode(sum);
-    //   if (result == null) {
-    //     result = nextChain = ln;
-    //   } else {
-    //     nextChain.next = ln;
-    //     nextChain = ln;
-    //   }
-    //   l2 = l2.next;
-    // }
 
     if (carry > 0) {
       ListNode ln = new ListNode(carry);
@@ -94,15 +58,3 @@ public class AddTwoList {
     }
   }
 }
-
-/*
-10998
-9 9 9
-9 9 9 9
-
-8 
-
- 9999
-  999
-10998
-*/
