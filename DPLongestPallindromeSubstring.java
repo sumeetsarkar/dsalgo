@@ -1,6 +1,9 @@
 public class DPLongestPallindromeSubstring {
-  public static void main(String...args) {
-    String s = "abcbcca";
+
+  public String longestPalindrome(String s) {
+    if (s == null || s.length() == 0) {
+      return "";
+    }
     char[] arr = s.toCharArray();
     int n = arr.length;
     boolean[][] table = new boolean[n][n];
@@ -20,12 +23,12 @@ public class DPLongestPallindromeSubstring {
       }
     }
 
-    for (int k = 3; k < n; k++) {
+    for (int k = 3; k <= n; k++) {
       for(int i = 0; i < n - k + 1; i++) {
         int j = i + k - 1;
         if (table[i + 1][j - 1] && arr[i] == arr[j]) {
           table[i][j] = true;
-          if (k > longest) {
+          if (k >= longest) {
             longest = k;
             start = i;
           }
@@ -33,7 +36,12 @@ public class DPLongestPallindromeSubstring {
       }
     }
 
-    System.out.printf("longest pallindrom of length %d, at poistion %d, \npallindrome %s",
-      longest, start, s.substring(start, longest + 1));
+    return s.substring(start, start + longest);
+  }
+
+  public static void main(String...args) {
+    String s = "aaa";
+    DPLongestPallindromeSubstring obj = new DPLongestPallindromeSubstring();
+    System.out.println(obj.longestPalindrome(s));
   }
 }
