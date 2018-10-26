@@ -10,6 +10,9 @@ For example, given the set {1, 2, 3}, it should return
 
 
 def powerset(list):
+    """
+    Time Complexity: O(n2^n)
+    """
     set_size = len(list)
     possible_sets = 2 ** set_size
     for counter in range(possible_sets):
