@@ -13,7 +13,6 @@ class Solution:
         :type emails: List[str]
         :rtype: int
         """
-        count = 0
         dictofemails = {}
         for email in emails:
             resolved_email = ''
