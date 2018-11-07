@@ -15,7 +15,9 @@ class LRU:
         self.__lookup = {}
         self.__front = self.__rear = None
 
-    def additem(self, key, data):
+    def additem(self, key, data = None):
+        if data is None:
+            data = key
         itemfound = self.getitem(key)
         if itemfound is not None:
             itemfound.data = data
@@ -76,10 +78,20 @@ if __name__ == '__main__':
     lru.additem(5, 'E')
     lru.additem(1, 'ABC')
     lru.additem(1, 'ABCDF')
-
     lru.print(True)
-    
     lru.getitem(3)
     lru.getitem(2)
-    
     lru.print(True)
+
+    lru2 = LRU(5)
+    lru2.additem('A')
+    lru2.additem('B')
+    lru2.additem('C')
+    lru2.additem('D')
+    lru2.additem('E')
+    lru2.additem('ABC')
+    lru2.additem('ABCDF')
+    lru2.print(True)
+    lru2.getitem('E')
+    lru2.getitem('D')
+    lru2.print(True)
